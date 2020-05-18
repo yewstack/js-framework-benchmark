@@ -10,7 +10,7 @@ crate-type = ["cdylib"]
 [dependencies]
 rand = { version = "0.7.3", features = ["wasm-bindgen", "small_rng"] }
 wasm-bindgen = "0.2.62"
-yew = "0.16.2"
+yew = { git = "https://github.com/totorigolo/yew", branch = "bugfix/keyed-elements-reorder" }
 
 [profile.release]
 lto = true
