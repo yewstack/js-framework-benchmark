@@ -5,22 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: nanasess/setup-chromedriver@master
-
-      - name: Setup Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-
-      # - name: Build comment message
-      #   run: MSG=`(cd results_diff && cargo run)`
-
       - name: Build comment message
-        run: MSG=test
-
+        run: MSG="test"
       - name: Comment PR
         uses: unsplash/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          msg: ${{ MSG }}
+          msg: ${{ env.MSG }}
