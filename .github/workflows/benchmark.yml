@@ -24,18 +24,30 @@ jobs:
           version: latest
           use-tool-cache: true
 
+      - uses: actions-rs/install@v0.1
+        with:
+          crate: https
+          version: latest
+          use-tool-cache: true
+
+      - name: Server
+        run: http -p 8080 &
+
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 12
 
       - name: Npm Install
-        run: npm install &&
-          (cd webdriver-ts && npm install) &&
+        run: |
+          npm install
+          (cd webdriver-ts && npm install)
           (cd webdriver-ts-results && npm install)
 
       - name: Build
-        run: npm run build-prod && (cd webdriver-ts && npm run build-prod)
+        run: |
+          npm run build-prod
+          (cd webdriver-ts && npm run build-prod)
 
       - name: Benchmark
         run: npm run bench -- --headless
@@ -44,11 +56,16 @@ jobs:
         run: npm run results
 
       - name: Build comment message
-        run: MSG=`(cd results_diff && cargo run)`
+        run: |
+          msg=$(cd results_diff && cargo run)
+          msg="${msg//'%'/'%25'}"
+          msg="${msg//$'\n'/'%0A'}"
+          msg="${msg//$'\r'/'%0D'}"
+          echo "::set-env name=MSG::$msg"
 
       - name: Comment PR
         uses: unsplash/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          msg: "$MSG"
+          msg: "${{ env.MSG }}"

@@ -58,22 +58,22 @@ https://chromedriver.chromium.org/downloads
 
 ### Setup local server
 
-You can use any server which properly handles the MIME type of wasm files. We recommend `miniserve`:
+You can use any server which properly handles the MIME type of wasm files. We recommend the `https` crate:
 
 ```
-cargo install miniserve
+cargo install https
 ```
 
-Start `miniserve` in the root directory
+Start server in the root directory
 ```
-miniserve .
+http -p 8080
 ```
 
 Verify that the server works:
 Try to open [http://localhost:8080/index.html](http://localhost:8080/index.html). If you see something like that you're on the right track:
 ![Index.html](images/index.png?raw=true "Index.html")
 
-Now open a new terminal window and keep `miniserve` running in background.
+Now open a new terminal window and keep `http` running in background.
 
 ### 2. Building and running a single framework
 
