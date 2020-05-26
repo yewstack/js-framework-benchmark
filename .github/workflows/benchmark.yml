@@ -12,12 +12,15 @@ jobs:
         with:
           toolchain: stable
 
+      # - name: Build comment message
+      #   run: MSG=`(cd results_diff && cargo run)`
+
       - name: Build comment message
-        run: MSG=`(cd results_diff && cargo run)`
+        run: MSG=test
 
       - name: Comment PR
         uses: unsplash/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          msg: $MSG
+          msg: ${{ MSG }}
