@@ -13,7 +13,6 @@ import * as R from 'ramda';
 let config:TConfig = defaultConfig;
 
 // necessary to launch without specifiying a path
-var chromedriver:any = require('chromedriver');
 var jStat:any = require('jstat').jStat;
 
 interface Timingresult {
