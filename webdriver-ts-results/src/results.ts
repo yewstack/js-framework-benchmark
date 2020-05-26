@@ -1,12 +1,12 @@
 import {RawResult} from './Common';
 
 export let results: RawResult[]=[
-{"f":"wasm-bindgen-v0.2.47-keyed","b":"01_run1k","v":[134.194,121.459,115.955,121.213,120.864,117.336,131.926,126.636,124.272,132.079]},
-{"f":"wasm-bindgen-v0.2.47-keyed","b":"02_replace1k","v":[115.203,115.83,119.173,121.186,126.364]},
-{"f":"wasm-bindgen-v0.2.47-keyed","b":"03_update10th1k_x16","v":[146.174,148.002,151.497,148.163,140.59]},
-{"f":"wasm-bindgen-v0.2.47-keyed","b":"04_select1k","v":[21.067,19.896,23.786,18.705,19.896]},
-{"f":"wasm-bindgen-v0.2.47-keyed","b":"05_swap1k","v":[40.605,42.675,54.717,50.464,45.66]},
-{"f":"wasm-bindgen-v0.2.47-keyed","b":"06_remove-one-1k","v":[28.402,25.442,29.545,28.425,29.252]},
+{"f":"wasm-bindgen-v0.2.47-keyed","b":"01_run1k","v":[114.791]},
+{"f":"wasm-bindgen-v0.2.47-keyed","b":"02_replace1k","v":[127.208]},
+{"f":"wasm-bindgen-v0.2.47-keyed","b":"03_update10th1k_x16","v":[170.312]},
+{"f":"wasm-bindgen-v0.2.47-keyed","b":"04_select1k","v":[21.985]},
+{"f":"wasm-bindgen-v0.2.47-keyed","b":"05_swap1k","v":[58.483]},
+{"f":"wasm-bindgen-v0.2.47-keyed","b":"06_remove-one-1k","v":[23.557]},
 {"f":"wasm-bindgen-v0.2.47-keyed","b":"07_create10k","v":[1222.112,1105.367,1159.221,1166.379,1145.693]},
 {"f":"wasm-bindgen-v0.2.47-keyed","b":"08_create1k-after1k_x2","v":[238.403,222.106,237.156,294.204,248.482]},
 {"f":"wasm-bindgen-v0.2.47-keyed","b":"09_clear1k_x8","v":[136.334,118.753,132.061,144.754,121.864]},

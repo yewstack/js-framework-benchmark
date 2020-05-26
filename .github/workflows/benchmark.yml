@@ -1,0 +1,44 @@
+name: Benchmark
+on: [pull_request]
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: nanasess/setup-chromedriver@master
+
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - uses: actions-rs/install@v0.1
+        with:
+          crate: wasm-bindgen-cli
+          version: latest
+          use-tool-cache: true
+
+      - uses: actions-rs/install@v0.1
+        with:
+          crate: wasm-pack
+          version: latest
+          use-tool-cache: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Npm Install
+        run: npm install &&
+          (cd webdriver-ts && npm install) &&
+          (cd webdriver-ts-results && npm install)
+
+      - name: Build
+        run: npm run build-prod && (cd webdriver-ts && npm run build-prod)
+
+      - name: Benchmark
+        run: npm run bench -- --headless
+
+      - name: Results
+        run: npm run results

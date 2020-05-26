@@ -7,7 +7,7 @@
     "frameworkVersion": "0.16.2"
   },
   "scripts": {
-    "build-prod": "rimraf bundled-dist && rustup target add wasm32-unknown-unknown && cargo install wasm-pack && wasm-pack build --release --target web --no-typescript --out-name js-framework-benchmark-yew --out-dir bundled-dist && cpr index.html bundled-dist/index.html && (cd bundled-dist && rimraf .gitignore README.md package.json)"
+    "build-prod": "rimraf bundled-dist && wasm-pack build --release --target web --no-typescript --out-name js-framework-benchmark-yew --out-dir bundled-dist && cpr index.html bundled-dist/index.html && (cd bundled-dist && rimraf .gitignore README.md package.json)"
   },
   "repository": {
     "type": "git",
