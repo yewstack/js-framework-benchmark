@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build comment message
-        run: MSG="test"
+        run: echo "::set-env name=MSG::test"
       - name: Comment PR
         uses: unsplash/comment-on-pr@master
         env:
