@@ -7,8 +7,7 @@
     "frameworkVersion": "0.2.47"
   },
   "scripts": {
-    "build-prod": "echo This is a no-op. && echo Due to heavy dependencies, the generated javascript is already provided. && echo If you really want to rebuild from source use: && echo npm run build-prod-force",
-    "build-prod-force": "rimraf bundled-dist pkg && webpack"
+    "build-prod": "rimraf bundled-dist pkg && webpack"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 import {RawResult} from './Common';
 
 export let results: RawResult[]=[
-{"f":"wasm-bindgen-v0.2.47-keyed","b":"01_run1k","v":[114.547,113.509,103.465,105.821,101.123]},
+{"f":"wasm-bindgen-v0.2.47-keyed","b":"01_run1k","v":[134.194,121.459,115.955,121.213,120.864,117.336,131.926,126.636,124.272,132.079]},
 {"f":"wasm-bindgen-v0.2.47-keyed","b":"02_replace1k","v":[115.203,115.83,119.173,121.186,126.364]},
 {"f":"wasm-bindgen-v0.2.47-keyed","b":"03_update10th1k_x16","v":[146.174,148.002,151.497,148.163,140.59]},
 {"f":"wasm-bindgen-v0.2.47-keyed","b":"04_select1k","v":[21.067,19.896,23.786,18.705,19.896]},
