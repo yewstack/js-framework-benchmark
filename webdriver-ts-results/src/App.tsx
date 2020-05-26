@@ -102,7 +102,7 @@ class App extends React.Component<{}, State> {
                   frameworksNonKeyed: frameworks.filter(f => f.keyed === false),
                   selectedBenchmarks: _allBenchmarks,
                   selectedFrameworks: _allFrameworks,
-                  separateKeyedAndNonKeyed: true,
+                  separateKeyedAndNonKeyed: false,
                   resultTables: [],
                   sortKey: SORT_BY_GEOMMEAN_CPU,
                   displayMode: DisplayMode_Mean,
