@@ -42,6 +42,10 @@ fn main() {
     let full_length = max_benchmark_name_len + 35 + 4 * 3 + 2; // 35: sum of columns defined below, 3: padding, 2: sign
 
     println!("### Benchmark Report");
+    println!("- `wasm-bindgen`: the performance goal");
+    println!("- `baseline`: performance of `yew-baseline` (typically latest master)");
+    println!("- `update`: performance of `yew` (typically recent changes)");
+    println!("- `diff`: measures the improvement of `update` over the `baseline`");
     println!("```diff");
     println!("@@ {:^1$} @@", "Performance Diff", full_length - 6);
     println!();
