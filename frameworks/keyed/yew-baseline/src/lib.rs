@@ -180,7 +180,7 @@ impl Component for Model {
                         { for self.rows.iter().map(|row| {
                             let id = row.id.clone();
                             html! {
-                                <tr key={id.to_string()} class=if self.selected_id == Some(id) { "danger" } else  { "" }>
+                                <tr class=if self.selected_id == Some(id) { "danger" } else  { "" }>
                                     <td class="col-md-1">{ id.to_string() }</td>
                                     <td class="col-md-4" onclick=self.link.callback(move |_| Msg::Select(id))>
                                         <a class="lbl">{ row.label.clone() }</a>
