@@ -468,7 +468,7 @@ async function init(input) {
     imports.wbg.__wbg_addEventListener_3526086a053a131e = handleError(function(arg0, arg1, arg2, arg3, arg4) {
         getObject(arg0).addEventListener(getStringFromWasm0(arg1, arg2), getObject(arg3), getObject(arg4));
     });
-    imports.wbg.__wbindgen_closure_wrapper1241 = function(arg0, arg1, arg2) {
+    imports.wbg.__wbindgen_closure_wrapper1242 = function(arg0, arg1, arg2) {
         var ret = makeMutClosure(arg0, arg1, 25, __wbg_adapter_16);
         return addHeapObject(ret);
     };
