@@ -10,7 +10,7 @@ crate-type = ["cdylib"]
 [dependencies]
 rand = { version = "0.7.3", features = ["wasm-bindgen", "small_rng"] }
 wasm-bindgen = "0.2.62"
-yew = { git = "https://github.com/jstarry/yew", branch = "keyed-list" }
+yew = { git = "https://github.com/jstarry/yew", branch = "split-render" }
 
 [profile.release]
 lto = true
