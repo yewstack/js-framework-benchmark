@@ -155,7 +155,8 @@ impl Component for Model {
             .iter()
             .map(|row| {
                 html! {
-                    <Row data=row.clone()
+                    <Row key=row.id
+                        data=row.clone()
                         selected=self.selected_id == Some(row.id)
                         on_select=self.on_select.clone()
                         on_remove=self.on_remove.clone() />
