@@ -12,7 +12,7 @@ rand = {version = "0.7.3", features = ["wasm-bindgen", "small_rng"]}
 wasm-bindgen = "0.2.62"
 
 # UPDATE TO USE YOUR BRANCH
-yew = {git = "https://github.com/bakape/yew ", rev = "d34e55d14bd1448e6a0c93a5958d3f38e48d8edd"}
+yew = {git = "https://github.com/bakape/yew ", branch = "dev/listener-multiplexer"}
 # UPDATE TO USE YOUR BRANCH
 
 [profile.release]
