@@ -296,11 +296,11 @@ impl Component for Row {
             <tr class=if self.props.selected { "danger" } else  { "" }>
                 <td class="col-md-1">{ self.props.data.id }</td>
                 <td class="col-md-4" onclick=self.state.on_select.clone()>
-                    <a class="lbl">{ self.props.data.label.clone() }</a>
+                    <a class="lbl" onclick=self.state.on_select.clone()>{ self.props.data.label.clone() }</a>
                 </td>
                 <td class="col-md-1">
                     <a class="remove" onclick=self.state.on_remove.clone()>
-                        <span class="glyphicon glyphicon-remove remove" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-remove remove" aria-hidden="true" onclick=self.state.on_remove.clone()></span>
                     </a>
                 </td>
                 <td class="col-md-6"></td>
