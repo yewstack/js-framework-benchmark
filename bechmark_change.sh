@@ -24,7 +24,9 @@ http -p 8080 &
 	(cd webdriver-ts &&
 		npm install -d &&
 		npm run build-prod &&
-		npm run bench -- --headless keyed/yew keyed/yew-baseline &&
+		npm run bench -- --headless \
+			frameworks/keyed/wasm-bindgen \
+			keyed/yew keyed/yew-baseline &&
 		npm run results)
 
 	chromium http://localhost:8080/webdriver-ts-results/table.html
