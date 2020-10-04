@@ -13,12 +13,6 @@ http -p 8080 &
 
 	(
 		set -euo pipefail
-		cd frameworks/keyed/wasm-bindgen
-		npm install -d
-		npm run build-prod
-	)
-	(
-		set -euo pipefail
 		cd frameworks/keyed/yew
 		npm install -d
 		npm run build-prod
@@ -37,11 +31,10 @@ http -p 8080 &
 	(
 		set -euo pipefail
 		cd webdriver-ts
+		rm -rf results
 		npm install -d
 		npm run build-prod
-		npm run bench -- --headless \
-			frameworks/keyed/wasm-bindgen \
-			keyed/yew keyed/yew-baseline
+		npm run bench -- --headless keyed/yew keyed/yew-baseline
 		npm run results
 	)
 
