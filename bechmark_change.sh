@@ -1,7 +1,6 @@
 #! /bin/bash
 # Usage: ./bechmark_change.sh CHANGE_BRANCH
 
-git reset --hard
 sed -i 's/PLACEHOLDER/'"${1/\//\\\/}"'/' frameworks/keyed/yew/Cargo.toml
 
 http -p 8080 &
