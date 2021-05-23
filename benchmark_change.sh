@@ -7,7 +7,7 @@ http -p 8080 &
 	set -euo pipefail
 
 	git checkout HEAD -- frameworks/keyed/yew/Cargo.toml
-	sed -i "s/PATH/$1\/packages/yew/" frameworks/keyed/yew/Cargo.toml
+	sed -i "s,PATH,$1/packages/yew," frameworks/keyed/yew/Cargo.toml
 
 	npm ci
 
@@ -40,7 +40,7 @@ http -p 8080 &
 		npm run results
 	)
 
-	xdg-open http://localhost:8080/webdriver-ts-results/table.html &
+	xdg-open http://localhost:8080/webdriver-ts-results/table.html
 )
 
 kill %%
