@@ -12,7 +12,7 @@ rand = {version = "0.7.3", features = ["wasm-bindgen", "small_rng"]}
 wasm-bindgen = "0.2.62"
 
 # UPDATE TO USE YOUR BRANCH
-yew = {path = "/home/janis/src/yew/yew"}
+yew = {path = "/home/janis/src/yew/packages/yew"}
 # UPDATE TO USE YOUR BRANCH
 
 [profile.release]
