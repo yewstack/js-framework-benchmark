@@ -12,26 +12,26 @@ http -p 8080 &
 		set -euo pipefail
 		cd frameworks/keyed/yew
 		rm -f Cargo.lock
-		npm install -d
+		npm ci
 		npm run build-prod
 	)
 	(
 		set -euo pipefail
 		cd frameworks/keyed/yew-baseline
 		rm -f Cargo.lock
-		npm install -d
+		npm ci
 		npm run build-prod
 	)
 	(
 		set -euo pipefail
 		cd webdriver-ts-results
-		npm install -d
+		npm ci
 	)
 	(
 		set -euo pipefail
 		cd webdriver-ts
 		rm -rf results
-		npm install -d
+		npm ci
 		npm run build-prod
 		npm run bench -- --headless keyed/yew keyed/yew-baseline
 		npm run results
