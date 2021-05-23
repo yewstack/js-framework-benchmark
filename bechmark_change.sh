@@ -11,14 +11,14 @@ http -p 8080 &
 	(
 		set -euo pipefail
 		cd frameworks/keyed/yew
-		rm Cargo.lock
+		rm -f Cargo.lock
 		npm install -d
 		npm run build-prod
 	)
 	(
 		set -euo pipefail
 		cd frameworks/keyed/yew-baseline
-		rm Cargo.lock
+		rm -f Cargo.lock
 		npm install -d
 		npm run build-prod
 	)
