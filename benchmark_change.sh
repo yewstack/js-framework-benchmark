@@ -40,7 +40,8 @@ http -p 8080 &
 		npm run results
 	)
 
-	xdg-open http://localhost:8080/webdriver-ts-results/table.html
+	xdg-open http://localhost:8080/webdriver-ts-results/table.html &
+	sleep 1
 )
 
 kill %%
