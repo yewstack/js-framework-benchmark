@@ -313,5 +313,5 @@ impl Component for Row {
 pub fn start() {
     let document = window().unwrap().document().unwrap();
     let mount_el = document.query_selector("#main").unwrap().unwrap();
-    App::<Model>::new().mount(mount_el);
+    yew::start_app_in_element::<Model>(mount_el);
 }
