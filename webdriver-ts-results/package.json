@@ -43,8 +43,8 @@
   },
   "dependencies": {
     "jStat": "1.7.1",
+    "plotly.js-cartesian-dist": "^1.45.2",
     "react": "16.8.4",
-    "react-dom": "16.8.4",
-    "plotly.js-cartesian-dist": "^1.45.2"
+    "react-dom": "16.8.4"
   }
 }
