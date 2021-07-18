@@ -40,7 +40,11 @@ http -p 8080 &
 		npm run results
 	)
 
-	xdg-open http://localhost:8080/webdriver-ts-results/table.html &
+	if [[ $OSTYPE == 'darwin'* ]]; then
+		open http://localhost:8080/webdriver-ts-results/table.html &
+	else
+		xdg-open http://localhost:8080/webdriver-ts-results/table.html &
+	fi
 	sleep 1
 )
 
