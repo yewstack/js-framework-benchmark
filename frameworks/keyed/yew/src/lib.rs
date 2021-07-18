@@ -155,18 +155,18 @@ impl Component for Model {
             .iter()
             .map(|row| {
                 html! {
-                    <Row key=row.id
-                        data=row.clone()
-                        selected=self.selected_id == Some(row.id)
-                        on_select=self.on_select.clone()
-                        on_remove=self.on_remove.clone() />
+                    <Row key={row.id}
+                        data={row.clone()}
+                        selected={self.selected_id == Some(row.id)}
+                        on_select={self.on_select.clone()}
+                        on_remove={self.on_remove.clone()} />
                 }
             })
             .collect();
 
         html! {
             <div class="container">
-                <Jumbotron link=self.link.clone() />
+                <Jumbotron link={self.link.clone()} />
                 <table class="table table-hover table-striped test-data">
                     <tbody id="tbody">
                         { rows }
@@ -213,22 +213,22 @@ impl Component for Jumbotron {
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-sm-6 smallpad">
-                                <button type="button" id="run" class="btn btn-primary btn-block" onclick=self.link.callback(|_| Msg::Run(1_000))>{ "Create 1,000 rows" }</button>
+                                <button type="button" id="run" class="btn btn-primary btn-block" onclick={self.link.callback(|_| Msg::Run(1_000))}>{ "Create 1,000 rows" }</button>
                             </div>
                             <div class="col-sm-6 smallpad">
-                                <button type="button" class="btn btn-primary btn-block" onclick=self.link.callback(|_| Msg::Run(10_000)) id="runlots">{ "Create 10,000 rows" }</button>
+                                <button type="button" class="btn btn-primary btn-block" onclick={self.link.callback(|_| Msg::Run(10_000))} id="runlots">{ "Create 10,000 rows" }</button>
                             </div>
                             <div class="col-sm-6 smallpad">
-                                <button type="button" class="btn btn-primary btn-block" onclick=self.link.callback(|_| Msg::Add(1_000)) id="add">{ "Append 1,000 rows" }</button>
+                                <button type="button" class="btn btn-primary btn-block" onclick={self.link.callback(|_| Msg::Add(1_000))} id="add">{ "Append 1,000 rows" }</button>
                             </div>
                             <div class="col-sm-6 smallpad">
-                                <button type="button" class="btn btn-primary btn-block" onclick=self.link.callback(|_| Msg::Update(10)) id="update">{ "Update every 10th row" }</button>
+                                <button type="button" class="btn btn-primary btn-block" onclick={self.link.callback(|_| Msg::Update(10))} id="update">{ "Update every 10th row" }</button>
                             </div>
                             <div class="col-sm-6 smallpad">
-                                <button type="button" class="btn btn-primary btn-block" onclick=self.link.callback(|_| Msg::Clear) id="clear">{ "Clear" }</button>
+                                <button type="button" class="btn btn-primary btn-block" onclick={self.link.callback(|_| Msg::Clear)} id="clear">{ "Clear" }</button>
                             </div>
                             <div class="col-sm-6 smallpad">
-                                <button type="button" class="btn btn-primary btn-block" onclick=self.link.callback(|_| Msg::Swap) id="swaprows">{ "Swap Rows" }</button>
+                                <button type="button" class="btn btn-primary btn-block" onclick={self.link.callback(|_| Msg::Swap)} id="swaprows">{ "Swap Rows" }</button>
                             </div>
                         </div>
                     </div>
@@ -293,13 +293,13 @@ impl Component for Row {
 
     fn view(&self) -> Html {
         html! {
-            <tr class=if self.props.selected { "danger" } else  { "" }>
+            <tr class={if self.props.selected { Some("danger") } else  { None }}>
                 <td class="col-md-1">{ self.props.data.id }</td>
-                <td class="col-md-4" onclick=self.state.on_select.clone()>
+                <td class="col-md-4" onclick={self.state.on_select.clone()}>
                     <a class="lbl">{ self.props.data.label.clone() }</a>
                 </td>
                 <td class="col-md-1">
-                    <a class="remove" onclick=self.state.on_remove.clone()>
+                    <a class="remove" onclick={self.state.on_remove.clone()}>
                         <span class="glyphicon glyphicon-remove remove" aria-hidden="true"></span>
                     </a>
                 </td>
@@ -313,5 +313,5 @@ impl Component for Row {
 pub fn start() {
     let document = window().unwrap().document().unwrap();
     let mount_el = document.query_selector("#main").unwrap().unwrap();
-    App::<Model>::new().mount(mount_el);
+    yew::start_app_in_element::<Model>(mount_el);
 }

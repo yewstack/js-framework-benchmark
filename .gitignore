@@ -78,3 +78,7 @@ Cargo.lock
 
 # emacs
 *~
+
+**/bundled-dist/*.js
+**/bundled-dist/*.wasm
+**/bundled-dist/*.html
